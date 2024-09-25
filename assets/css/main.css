@@ -1058,14 +1058,21 @@ section,
 .schedule .nav-tabs {
   text-align: center;
   margin: auto;
-  display: block;
+  display: flex;
+  overflow: hidden;
   border-bottom: 0;
   margin-bottom: 30px;
+  display: flex;
+  justify-content: flex-start; /* Center items */
+  flex-wrap: nowrap; /* Prevent wrapping to new line */
+  overflow-x: auto; /* Allow horizontal scrolling if necessary */
+  /* position: relative; */
 }
 
 .schedule .nav-tabs li {
-  display: inline-block;
-  margin-bottom: 0;
+  flex: 0 0 auto; /* Prevent items from growing */
+  margin: 10px 10px; /* Add margin for spacing */
+  transition: transform 0.5s ease; /* Smooth transition for slide effect */
 }
 
 .schedule .nav-tabs a {
@@ -1074,10 +1081,9 @@ section,
   font-weight: 600;
   background-color: var(--heading-color);
   color: var(--contrast-color);
-  padding: 10px 100px;
-}
+  padding: 10px 20px; /* Adjust padding for better appearance */}
 
-@media (max-width: 991px) {
+/* @media (max-width: 991px) {
   .schedule .nav-tabs a {
     padding: 8px 60px;
   }
@@ -1093,7 +1099,40 @@ section,
   .schedule .nav-tabs a {
     padding: 8px 30px;
   }
+} */
+
+@media (max-width: 991px) {
+  .schedule .nav-tabs a {
+    padding: 8px 40px; /* Reduce padding for better fit */
+  }
 }
+
+@media (max-width: 767px) {
+  .schedule .nav-tabs a {
+    padding: 8px 30px; /* Further reduce padding */
+  }
+
+  .schedule .nav-tabs {
+    overflow-x: auto; /* Always allow horizontal scrolling */
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling */
+  }
+
+  .schedule .nav-tabs li {
+    flex: 0 0 auto; /* Keep items from stretching */
+  }
+}
+
+@media (max-width: 480px) {
+  .schedule .nav-tabs a {
+    padding: 8px 20px; /* Minimal padding for mobile */
+  }
+
+  .schedule .nav-tabs li {
+    margin: 0 5px; /* Tighten spacing for mobile */
+  }
+}
+
+
 
 .schedule .nav-tabs a.active {
   background-color: var(--accent-color);
