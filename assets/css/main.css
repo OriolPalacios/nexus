@@ -1261,6 +1261,12 @@ section,
   border-bottom: 3px solid var(--background-color);
 }
 
+.venue .venue-gallery p {
+  position: absolute;
+  /* top: 0; */
+  /* right: 0; */
+}
+
 .venue .venue-gallery img {
   transition: all ease-in-out 0.4s;
 }
@@ -1748,4 +1754,9 @@ section,
 .notebene-text{
   font-size: 1.5em;
   font-style: italic;
+}
+
+.justify-content-modified{
+  text-align: justify;
+  text-justify: inter-word;
 }
