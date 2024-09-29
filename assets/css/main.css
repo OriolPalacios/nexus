@@ -27,6 +27,7 @@
   --surface-color: #ffffff; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
   --contrast-color: #ffffff; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
   --notebene-color: #F2A71B;
+  --notebene-color-sec: #cb8f1f;
 }
 
 /* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
@@ -759,7 +760,9 @@ h6 {
   [data-aos-delay] {
     transition-delay: 0 !important;
   }
+
 }
+
 
 /*--------------------------------------------------------------
 # Global Page Titles & Breadcrumbs
@@ -1015,11 +1018,15 @@ section,
   font-size: 16px;
 }
 
-.speakers .member .member-info-content h4 a {
+.speakers .member .member-info-content h4 .as-a {
   color: var(--contrast-color);
+  font-weight: 700;
+  margin-bottom: 4px;
+  font-size: 16px;
+  font-style: normal;
 }
 
-.speakers .member .member-info-content h4 a:hover {
+.speakers .member .member-info-content h4 .as-a:hover {
   color: var(--accent-color);
 }
 
@@ -1267,6 +1274,8 @@ section,
   padding-right: 12px;
 }
 
+
+
 .venue .venue-gallery {
   width: 100%;
   height: 100%;
@@ -1278,9 +1287,18 @@ section,
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  /* assign a gradient of black and white */
-  background-color: var(--accent-color);
 }
+
+
+.venue .venue-gallery-container .row .col-lg-3:nth-child(odd) .venue-gallery{
+  background-image:linear-gradient(var(--accent-color), var(--heading-color));
+}
+
+.venue .venue-gallery-container .row .col-lg-3:nth-child(even) .venue-gallery{
+  background-image: linear-gradient(var(--notebene-color), #745c00);
+  /* background-color: var(--notebene-color-sec); */
+}
+
 
 .venue .venue-gallery .venue-tittle {
   /* position: absolute; */
@@ -1290,6 +1308,7 @@ section,
   transition: all ease-in-out 0.4s;
   font-size: 1.2em;
 }
+
 
 .venue .venue-gallery .venue-content {
   scale: 0;
@@ -1327,6 +1346,33 @@ section,
   transform: scale(1.1);
 }
 
+
+@media (min-width: 768px) {
+  .venue-gallery{
+    width: 359px;
+    position: relative;
+  }
+  
+  ::-webkit-scrollbar {
+    width: 5px; 
+    padding-left: 5px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: none; 
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--background-color); 
+    border-radius: 6px; 
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--nav-dropdown-color); 
+  }
+
+}
+
 /*--------------------------------------------------------------
 # Hotels Section
 --------------------------------------------------------------*/
@@ -1336,6 +1382,7 @@ section,
   border: 1px solid color-mix(in srgb, var(--default-color), transparent 85%);
   position: relative;
   border-radius: 0;
+  padding-top: 10px;
 }
 
 .hotels .card .card-img {
