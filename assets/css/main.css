@@ -1256,8 +1256,8 @@ section,
 
 .venue .venue-info:before {
   content: "";
-  background: rgba(63, 63, 63, 0.5);
-  backdrop-filter: blur(2px);
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(3px);
   position: absolute;
   bottom: 0;
   top: 0;
@@ -1303,12 +1303,13 @@ section,
 
 
 .venue .venue-gallery-container .row .col-lg-3:nth-child(odd) .venue-gallery{
-  background-image:linear-gradient(var(--accent-color), var(--heading-color));
+  /* background-image:linear-gradient(var(--accent-color), var(--heading-color)); */
+  background-color: var(--accent-color);
 }
 
 .venue .venue-gallery-container .row .col-lg-3:nth-child(even) .venue-gallery{
-  background-image: linear-gradient(var(--notebene-color), #745c00);
-  /* background-color: var(--notebene-color-sec); */
+  /* background-image: linear-gradient(var(--notebene-color), #745c00); */
+  background-color: var(--notebene-color);
 }
 
 
