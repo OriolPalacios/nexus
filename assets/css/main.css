@@ -992,13 +992,16 @@ section,
 }
 
 .speakers .member {
+  background-color: var(--default-color);
   text-align: center;
   position: relative;
   overflow: hidden;
+  width: 300px;
+  height: 400px;
 }
 
 .speakers .member img{
-  width: 300px;
+  width: 100%;
   height: auto;
   transition: all ease-in-out 0.3s;
 }
@@ -1041,15 +1044,16 @@ section,
   padding-top: 10px;
 }
 
-.speakers .member .social a {
+.speakers .member .social span{
   transition: color 0.3s;
   color: color-mix(in srgb, var(--default-color), transparent 30%);
   margin: 0 4px;
   display: inline-block;
+  font-size: 18px;
 }
 
-.speakers .member .social a:hover {
-  color: var(--default-color);
+.speakers .member .social span:hover {
+  color: var(--default);
 }
 
 .speakers .member .social i {
@@ -1058,7 +1062,7 @@ section,
 }
 
 .speakers .member:hover .member-info {
-  bottom: 0;
+  /* bottom: 0; */
 }
 
 /*--------------------------------------------------------------
