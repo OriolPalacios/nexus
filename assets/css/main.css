@@ -1343,7 +1343,9 @@ section,
 
 
 .venue .venue-gallery img {
+  position: absolute;
   transition: all ease-in-out 0.4s;
+  filter: blur(2px);
 }
 
 .venue .venue-gallery:hover img {
