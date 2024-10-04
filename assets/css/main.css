@@ -1283,12 +1283,12 @@ section,
 }
 
 .venue .venue-gallery-container {
-  padding-right: 12px;
+  /* padding-right: 12px; */
   display: flex;
 }
 
 .venue-gallery-container .carousel-control-next{
-  transform: translateY(50%,-50%);
+  /* transform: translateY(0%); */
 }
 
 .venue .venue-gallery {
@@ -1303,7 +1303,6 @@ section,
   align-items: center;
   justify-content: center;
 }
-
 
 .venue .venue-gallery-container .row .col-lg-3:nth-child(odd) .venue-gallery{
   /* background-image:linear-gradient(var(--accent-color), var(--heading-color)); */
@@ -1880,4 +1879,9 @@ section,
 
 .last-form{
   justify-content: space-evenly;
+}
+
+.disabled-text {
+  text-decoration: line-through;
+  color: gray; /* Bootstrap's muted color */
 }
