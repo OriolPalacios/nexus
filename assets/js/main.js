@@ -177,4 +177,39 @@
   window.addEventListener('load', navmenuScrollspy);
   document.addEventListener('scroll', navmenuScrollspy);
 
+  /**
+   * retrieve the elements with id: hours, minutes, seconds
+   * then create an instance of Date class, and get the hours, minutes and seconds of the device
+   * then fill those values into into the fetched elements
+   */
+  
+  const eventDate1 = "2024-10-11T18:00:00";
+  const eventDate2 = "2024-10-13T00:00:00";
+  function displayEvent(eventDate, tag) {
+    const el = document.getElementById(tag);
+    function mostrarHora(){
+      const currentDate = new Date();
+      const leftTime = new Date(eventDate).getTime() - currentDate.getTime();
+      let days = el.querySelector('#days');
+      let hours = el.querySelector('#hours');
+      let minutes = el.querySelector('#minutes');
+      let seconds = el.querySelector('#seconds');
+  
+      const leftSeconds = Math.floor((leftTime / 1000)%60);
+      const leftMinutes = Math.floor((leftTime / (1000 * 60))%60);
+      const leftHours = Math.floor((leftTime / (1000 * 60 * 60))%24);
+      const leftDays = Math.floor(leftTime / (1000 * 60 * 60 * 24));
+  
+      days.innerHTML = leftDays + "<br>Días";
+      hours.innerHTML = leftHours + " <br>Horas";
+      minutes.innerHTML = leftMinutes + "<br>Minutos";
+      seconds.innerHTML = leftSeconds + "<br>Segundos";
+  
+    }
+    setInterval(mostrarHora, 1000);
+    mostrarHora(); 
+  }
+  displayEvent(eventDate1, 'countdown-event-1');
+  displayEvent(eventDate2, 'countdown-event-2');
 })();
+
