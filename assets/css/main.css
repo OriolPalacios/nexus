@@ -2049,7 +2049,14 @@ section,
 
 .interviews-section .carousel-control-next, .interviews-section .carousel-control-prev{
   filter: invert(100%);
+  display: inline !important;
+  height: 25%;
+  width: 10%;
+  position: absolute;
+  top: 70%;
+  transform: translateY(-100%);
 }
+
 
 .iframe-container{
   position: relative;
@@ -2069,3 +2076,12 @@ section,
   border: 0;
 }
 
+.yt-carousel-container{
+  /* display: flex; */
+  height: 50%;
+  width: 100%;
+}
+
+.yt-carousel-container .carousel-inner {
+  height: 25%;
+}
