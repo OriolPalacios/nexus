@@ -1976,7 +1976,7 @@ section,
 # Starter Section Section
 --------------------------------------------------------------*/
 .starter-section {
-  /* Add your styles here */
+  background-color: var(--background-color);
 }
 
 .main p span{
@@ -2004,6 +2004,10 @@ section,
 }
 
 
-.section-interviews {
-  background-color: var(--default-color);
+.interviews-section span{
+  color: var(--default-color);
+}
+
+.interviews-section .carousel-control-next, .interviews-section .carousel-control-prev{
+  filter: invert(100%);
 }
