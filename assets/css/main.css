@@ -708,12 +708,11 @@ h6 {
   .pulse-box-shadow::before{
     left: 100%;
     z-index: -10;
-    transform: translateX(-112%) translateY(-50%);
+    transform: translateX(-115%) translateY(-50%);
     background-color: rgba(153, 171, 83, .4);
   }
   ul .pulse-box-shadow::before{
     display:none;
-    content: "sss";
   }
 }
 
