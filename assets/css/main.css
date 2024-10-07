@@ -711,6 +711,10 @@ h6 {
     transform: translateX(-112%) translateY(-50%);
     background-color: rgba(153, 171, 83, .4);
   }
+  ul .pulse-box-shadow::before{
+    display:none;
+    content: "sss";
+  }
 }
 
 
