@@ -368,8 +368,9 @@ h6 {
   animation: pulse-animation 2s infinite;
 }
 
-.pulse-effect a{
-  color: green;  
+.pulse-effect{
+  color: var(--notebene-color) !important;
+  transform-origin: top left;
 }
 
 @keyframes pulse-animation {
@@ -378,13 +379,42 @@ h6 {
   }
 
   50% {
-    transform: scale(1.15) translate(20px);
+    transform: scale(1.15);
   }
 
   100% {
     transform: scale(1);
   }
 }
+
+.pulse-box-shadow::before{
+  position: absolute;
+  content: "";
+  left:50%;
+  top: 50%;
+  transform: translate(-50%, -50%); 
+  width: 3em;
+  height: 3em;
+  /* background-color: rgba(var(--notebene-color), 1); */
+  /* outline: solid 1px red; */
+  background-color: rgba(153, 171, 83, .1);
+  border-radius: 50%;
+  box-shadow: 0 0 0 0 rgba(153, 171, 83, .5);
+  animation: pulse-shadow 2s infinite;
+}
+
+@keyframes pulse-shadow {
+  0%{
+    box-shadow: 0 0 0 0 rgba(153, 171, 83, .4);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(153, 171, 83, 0);
+  }
+  100%{
+    box-shadow: 0 0 0 0 rgba(153, 171, 83, 0);
+  }
+}
+
 
 .scrolled .header {
   box-shadow: 0px 0 18px rgba(0, 0, 0, 0.1);
@@ -529,6 +559,11 @@ h6 {
     left: -100%;
     visibility: visible;
   }
+
+  .pulse-effect{
+    transform-origin: center;
+  }
+
   @keyframes pulse-animation {
     0% {
       transform: scale(1);
@@ -542,6 +577,7 @@ h6 {
       transform: scale(1);
     }
   }
+
 }
 
 /* Mobile Navigation */
@@ -555,6 +591,7 @@ h6 {
     transition: color 0.3s;
   }
 
+
   .navmenu {
     padding: 0;
     z-index: 9997;
@@ -565,7 +602,7 @@ h6 {
     list-style: none;
     position: absolute;
     inset: 60px 20px 20px 20px;
-    padding: 10px 0;
+    padding: 10px 0;  
     margin: 0;
     border-radius: 6px;
     background-color: var(--nav-dropdown-background-color);
@@ -668,10 +705,12 @@ h6 {
   .mobile-nav-active .navmenu>ul {
     display: block;
   }
-}
-
-.navmenu .pulse-effect a{
-  color: var(--notebene-color);
+  .pulse-box-shadow::before{
+    left: 100%;
+    z-index: -10;
+    transform: translateX(-112%) translateY(-50%);
+    background-color: rgba(153, 171, 83, .4);
+  }
 }
 
 
@@ -2000,7 +2039,7 @@ section,
 
 .disabled-text {
   text-decoration: line-through;
-  color: gray; /* Bootstrap's muted color */
+  color: gray; 
 }
 
 
@@ -2029,3 +2068,4 @@ section,
   height: 100%;
   border: 0;
 }
+
